@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krushna Pure Veg Family Restaurant | Undri, Pune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS VARIABLES ===== */
+  :root {
+    --cream: #FDF6EC;
+    --cream-dark: #F5E8D0;
+    --saffron: #E8871A;
+    --saffron-light: #F5A94A;
+    --gold: #C8922A;
+    --gold-light: #E3B55A;
+    --green: #1E4D2B;
+    --green-mid: #2E6B3E;
+    --green-light: #4A8C5C;
+    --text-dark: #1A1208;
+    --text-mid: #3D2B0A;
+    --text-light: #7A6040;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(30,20,5,0.10);
+    --shadow-lg: 0 12px 48px rgba(30,20,5,0.15);
+    --radius: 12px;
+    --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  section { padding: 80px 0; }
+
+  /* ===== UTILITY ===== */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--green);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-light);
+    max-width: 560px;
+    font-weight: 300;
+  }
+  .btn {
+    display: inline-block;
+    padding: 13px 32px;
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all var(--transition);
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--saffron);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(232,135,26,0.35);
+  }
+  .btn-primary:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232,135,26,0.4);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.7);
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: var(--white);
+  }
+  .btn-green {
+    background: var(--green);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(30,77,43,0.3);
+  }
+  .btn-green:hover {
+    background: var(--green-mid);
+    transform: translateY(-2px);
+  }
+  .divider {
+    width: 56px; height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold-light));
+    border-radius: 2px;
+    margin: 16px 0 24px;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 0 24px;
+    transition: all var(--transition);
+  }
+  nav.scrolled {
+    background: rgba(253,246,236,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(30,20,5,0.10);
+  }
+  .nav-inner {
+    max-width: 1160px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .nav-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.15;
+  }
+  .nav-logo-text span { display: block; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--saffron); }
+  .nav-links {
+    display: flex; align-items: center; gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem; font-weight: 500; color: var(--text-mid);
+    transition: color var(--transition); letter-spacing: 0.03em;
+  }
+  .nav-links a:hover { color: var(--saffron); }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 22px; height: 2px; background: var(--green); border-radius: 2px; transition: all var(--transition); display: block; }
+
+  /* Mobile nav */
+  .mobile-menu {
+    display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+    background: var(--cream); padding: 20px 24px 28px;
+    box-shadow: 0 12px 32px rgba(30,20,5,0.12);
+    flex-direction: column; gap: 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 13px 0; font-size: 1rem; font-weight: 500; color: var(--text-mid); border-bottom: 1px solid var(--cream-dark); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .btn { margin-top: 16px; text-align: center; }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center;
+    background: var(--green);
+    overflow: hidden;
+    padding: 0;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      linear-gradient(160deg, rgba(30,77,43,0.88) 0%, rgba(26,18,8,0.75) 60%, rgba(200,146,42,0.25) 100%),
+      url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1600&q=80') center/cover no-repeat;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; z-index: 1; opacity: 0.06;
+    background-image: radial-gradient(circle, var(--gold-light) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    padding-top: 90px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,135,26,0.18); border: 1px solid rgba(232,135,26,0.4);
+    color: var(--gold-light); border-radius: 50px; padding: 6px 16px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-badge::before { content: '🌿'; font-size: 0.9rem; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 700; color: var(--white); line-height: 1.1;
+    margin-bottom: 20px; max-width: 700px;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.80);
+    max-width: 500px; margin-bottom: 36px; font-weight: 300; line-height: 1.75;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex; gap: 36px; margin-top: 56px;
+    padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.12);
+    flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--gold-light); line-height: 1;
+  }
+  .hero-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; margin-top: 4px; }
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .hero-scroll::after {
+    content: ''; width: 1px; height: 36px; background: rgba(255,255,255,0.25);
+  }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ===== ABOUT ===== */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%; height: 420px; object-fit: cover;
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  }
+  .about-img-thumb {
+    position: absolute; bottom: -24px; right: -24px;
+    width: 180px; height: 140px; object-fit: cover;
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    border: 4px solid var(--white);
+  }
+  .about-badge {
+    position: absolute; top: -16px; left: -16px;
+    background: var(--saffron); color: var(--white);
+    width: 90px; height: 90px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    box-shadow: 0 4px 20px rgba(232,135,26,0.45);
+  }
+  .about-badge-num { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+  .about-badge-text { font-size: 0.6rem; letter-spacing: 0.08em; font-family: 'Jost', sans-serif; font-weight: 500; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .about-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--cream); border: 1px solid var(--cream-dark);
+    border-radius: 50px; padding: 7px 16px;
+    font-size: 0.8rem; font-weight: 500; color: var(--text-mid);
+  }
+  .about-tag::before { font-size: 0.9rem; }
+  .about-tag.leaf::before { content: '🌿'; }
+  .about-tag.fam::before { content: '👨‍👩‍👧‍👦'; }
+  .about-tag.hall::before { content: '🏛️'; }
+  .about-tag.park::before { content: '🚗'; }
+
+  /* ===== MENU ===== */
+  #menu { background: var(--cream); }
+  .menu-header { text-align: center; margin-bottom: 48px; }
+  .menu-header .divider { margin: 16px auto 24px; }
+  .menu-header .section-sub { margin: 0 auto; }
+  .menu-tabs { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .menu-tab {
+    padding: 9px 24px; border-radius: 50px; font-size: 0.875rem; font-weight: 500;
+    cursor: pointer; transition: all var(--transition);
+    border: 1.5px solid var(--cream-dark); background: var(--white); color: var(--text-mid);
+  }
+  .menu-tab.active, .menu-tab:hover {
+    background: var(--green); color: var(--white); border-color: var(--green);
+  }
+  .menu-panel { display: none; }
+  .menu-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+  .menu-card {
+    background: var(--white); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .menu-card-img {
+    width: 100%; height: 200px; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .menu-card:hover .menu-card-img { transform: scale(1.05); }
+  .menu-card-img-wrap { overflow: hidden; }
+  .menu-card-body { padding: 18px 20px; }
+  .menu-card-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--saffron); margin-bottom: 6px;
+  }
+  .menu-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px;
+  }
+  .menu-card-desc { font-size: 0.825rem; color: var(--text-light); line-height: 1.6; }
+  .menu-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+  .menu-price { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--green); }
+  .veg-badge { display: inline-block; width: 16px; height: 16px; border: 2px solid #2e7d32; border-radius: 3px; position: relative; }
+  .veg-badge::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 7px; height: 7px; border-radius: 50%; background: #2e7d32; }
+
+  /* ===== FEATURES ===== */
+  #features { background: var(--green); }
+  .features-header { text-align: center; margin-bottom: 52px; }
+  .features-header .section-title { color: var(--white); }
+  .features-header .section-label { color: var(--gold-light); }
+  .features-header .divider { background: linear-gradient(90deg, var(--gold-light), var(--saffron-light)); margin: 16px auto 0; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+  .feature-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius); padding: 28px 24px;
+    text-align: center; transition: all var(--transition);
+  }
+  .feature-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-4px); }
+  .feature-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(232,135,26,0.2); border: 1px solid rgba(232,135,26,0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin: 0 auto 16px;
+  }
+  .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .feature-desc { font-size: 0.825rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* ===== REVIEWS ===== */
+  #reviews { background: var(--white); }
+  .reviews-header { margin-bottom: 48px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+  .review-card {
+    background: var(--cream); border-radius: var(--radius); padding: 28px;
+    border: 1px solid var(--cream-dark); transition: transform var(--transition);
+    position: relative;
+  }
+  .review-card:hover { transform: translateY(-3px); }
+  .review-card::before {
+    content: '\201C';
+    position: absolute; top: 16px; right: 22px;
+    font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+    color: var(--cream-dark); line-height: 1;
+  }
+  .stars { display: flex; gap: 3px; margin-bottom: 14px; }
+  .star { color: var(--gold); font-size: 0.9rem; }
+  .star.half { color: var(--gold-light); }
+  .star.empty { color: #ddd; }
+  .review-text { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 18px; font-style: italic; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-light), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 600; color: var(--white); font-family: 'Jost', sans-serif;
+    flex-shrink: 0;
+  }
+  .review-name { font-size: 0.875rem; font-weight: 600; color: var(--text-dark); }
+  .review-source { font-size: 0.75rem; color: var(--text-light); }
+  .review-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 50px; margin-bottom: 14px;
+  }
+  .tag-positive { background: #e8f5e9; color: #2e7d32; }
+  .tag-neutral { background: #fff8e1; color: #f57c00; }
+  .tag-negative { background: #fce4ec; color: #c62828; }
+
+  /* ===== GALLERY ===== */
+  #gallery { background: var(--cream); }
+  .gallery-header { margin-bottom: 40px; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 220px 220px;
+    gap: 14px;
+  }
+  .gallery-item { border-radius: var(--radius); overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 2; }
+  .gallery-img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover .gallery-img { transform: scale(1.07); }
+  .gallery-overlay {
+    position: absolute; inset: 0; background: rgba(30,77,43,0); 
+    transition: background var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-item:hover .gallery-overlay { background: rgba(30,77,43,0.35); }
+  .gallery-label {
+    color: var(--white); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    opacity: 0; transition: opacity var(--transition); text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+  .gallery-item:hover .gallery-label { opacity: 1; }
+
+  /* ===== VISIT ===== */
+  #visit { background: var(--white); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .visit-info-items { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+  .visit-info-item { display: flex; gap: 16px; align-items: flex-start; }
+  .visit-info-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: var(--cream); border: 1px solid var(--cream-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .visit-info-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--saffron); margin-bottom: 4px; }
+  .visit-info-val { font-size: 0.95rem; color: var(--text-mid); font-weight: 400; line-height: 1.5; }
+  .visit-info-val a { color: var(--green); font-weight: 500; }
+  .visit-info-val a:hover { color: var(--saffron); }
+  .map-wrap { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); height: 380px; }
+  .map-wrap iframe { width: 100%; height: 100%; border: none; }
+  .visit-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+
+  /* ===== CTA ===== */
+  #cta {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
+    padding: 80px 0; text-align: center; position: relative; overflow: hidden;
+  }
+  #cta::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .cta-inner { position: relative; z-index: 1; }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700;
+    color: var(--white); margin-bottom: 14px; line-height: 1.2;
+  }
+  .cta-sub { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 36px; font-weight: 300; }
+  .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .btn-white { background: var(--white); color: var(--saffron); font-weight: 600; }
+  .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+  .btn-outline-white { border: 1.5px solid rgba(255,255,255,0.8); color: var(--white); background: transparent; font-weight: 500; }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+
+  /* ===== FOOTER ===== */
+  footer { background: var(--text-dark); color: rgba(255,255,255,0.7); padding: 48px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand .nav-logo-text { color: var(--gold-light); }
+  .footer-brand .nav-logo-text span { color: var(--saffron-light); }
+  .footer-desc { font-size: 0.85rem; margin-top: 12px; line-height: 1.7; color: rgba(255,255,255,0.5); }
+  .footer-heading { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+  .footer-links a:hover { color: var(--saffron-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 12px; }
+  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+  .footer-veg { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #4caf50; font-weight: 500; }
+
+  /* ===== FLOATING BUTTONS ===== */
+  .float-btns { position: fixed; bottom: 28px; right: 24px; z-index: 900; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .float-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 11px 18px 11px 14px; border-radius: 50px;
+    font-size: 0.82rem; font-weight: 600; color: var(--white);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    transition: all var(--transition); white-space: nowrap; cursor: pointer;
+  }
+  .float-wa { background: #25D366; }
+  .float-wa:hover { background: #1ebe5d; transform: translateX(-4px); }
+  .float-order { background: var(--saffron); }
+  .float-order:hover { background: var(--gold); transform: translateX(-4px); }
+  .float-btn-icon { font-size: 1.1rem; }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-img-thumb { right: 0; }
+    .visit-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; height: 220px; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 60px 0; }
+    .hero-stats { gap: 24px; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 1; }
+    .gallery-item:nth-child(4) { grid-column: span 1; }
+    .features-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: span 1; }
+    .float-btns { bottom: 16px; right: 14px; }
+    .hero-btns { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">🪷</div>
+      <div class="nav-logo-text">Krushna<span>Pure Veg Restaurant</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#features">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:09226347536" class="btn btn-outline" style="color:var(--green);border-color:var(--green);">📞 Call</a>
+      <a href="#cta" class="btn btn-primary">Book a Table</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About Us</a>
+  <a href="#menu" onclick="toggleMenu()">Menu</a>
+  <a href="#features" onclick="toggleMenu()">Why Choose Us</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#visit" onclick="toggleMenu()">Visit Us</a>
+  <a href="#cta" class="btn btn-primary" onclick="toggleMenu()">Book a Table</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">100% Pure Vegetarian</div>
+    <h1 class="hero-title">Pure Vegetarian<br><em>Excellence in Pune</em></h1>
+    <p class="hero-sub">Authentic North Indian, South Indian & Chinese flavours — served in a spacious, family-friendly space ideal for everyday dining, celebrations & special occasions.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-primary">View Menu</a>
+      <a href="#cta" class="btn btn-outline">Book a Table</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">3+</div>
+        <div class="hero-stat-label">Cuisines</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">Seating Capacity</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">11 PM</div>
+        <div class="hero-stat-label">Open Until</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Undri</div>
+        <div class="hero-stat-label">Pune, MH</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-up">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80" alt="Restaurant Interior" class="about-img-main">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&q=80" alt="Food" class="about-img-thumb">
+        <div class="about-badge">
+          <span class="about-badge-num">❤️</span>
+          <span class="about-badge-text">Pure Veg</span>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">A Space Built for Families, Flavours & Memories</h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="margin-bottom:16px">
+          Nestled in the heart of Undri, Pune — Krushna Pure Veg Family Restaurant is a place where good food meets good company. We serve a diverse multi-cuisine menu under one roof, all cooked in a strictly vegetarian kitchen.
+        </p>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.75;margin-bottom:24px">
+          Whether you're here for a casual family lunch, a birthday dinner, or a large gathering in our banquet hall — we aim to make every visit comfortable, nourishing, and memorable. Our space includes AC family dining, poolside seating, and ample parking — making us one of the more complete dining destinations in the Undri area.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag leaf">Pure Veg Kitchen</span>
+          <span class="about-tag fam">Family Friendly</span>
+          <span class="about-tag hall">Banquet Hall</span>
+          <span class="about-tag park">Ample Parking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="menu-header fade-up">
+      <div class="section-label">What We Serve</div>
+      <h2 class="section-title">Menu Highlights</h2>
+      <div class="divider"></div>
+      <p class="section-sub">From crispy dosas to rich paneer curries — our menu spans authentic flavours across three beloved cuisines.</p>
+    </div>
+    <div class="menu-tabs fade-up">
+      <button class="menu-tab active" onclick="switchTab('south')">🥞 South Indian</button>
+      <button class="menu-tab" onclick="switchTab('north')">🫕 North Indian</button>
+      <button class="menu-tab" onclick="switchTab('chinese')">🍜 Chinese</button>
+    </div>
+
+    <!-- South Indian -->
+    <div class="menu-panel active" id="tab-south">
+      <div class="menu-card fade-up">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=80" alt="Mysore Masala Dosa" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">⭐ Popular</div>
+          <div class="menu-card-name">Mysore Masala Dosa</div>
+          <p class="menu-card-desc">Crispy dosa with a spicy red chutney base, served with aloo masala, coconut chutney, and sambar.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹160</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.1s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&q=80" alt="Idli Sambar" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Classic</div>
+          <div class="menu-card-name">Idli Sambar</div>
+          <p class="menu-card-desc">Soft steamed rice cakes served with hot sambar and fresh coconut chutney. Light, wholesome, filling.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹110</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.2s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&q=80" alt="Medu Wada" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Snack</div>
+          <div class="menu-card-name">Medu Wada</div>
+          <p class="menu-card-desc">Crispy fried lentil donuts, served hot with coconut chutney and sambar. Great as a starter or snack.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹120</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- North Indian -->
+    <div class="menu-panel" id="tab-north">
+      <div class="menu-card fade-up">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80" alt="Paneer Tikka" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">⭐ Bestseller</div>
+          <div class="menu-card-name">Paneer Tikka</div>
+          <p class="menu-card-desc">Marinated paneer cubes grilled in tandoor with peppers and onions. Smoky, juicy, and flavourful.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹280</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.1s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&q=80" alt="Cotton Paneer" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">⭐ Chef's Special</div>
+          <div class="menu-card-name">Cotton Paneer</div>
+          <p class="menu-card-desc">Light and fluffy paneer preparation with a melt-in-mouth texture. A unique house specialty not to be missed.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹320</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.2s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Pav Bhaji" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Street Favourite</div>
+          <div class="menu-card-name">Pav Bhaji</div>
+          <p class="menu-card-desc">Buttery spiced vegetable mash with soft toasted pav. A Mumbai classic, done right.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹150</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.3s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1694495726698-f4e5fe6f1be0?w=600&q=80" alt="Veg Biryani" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">⭐ Must Try</div>
+          <div class="menu-card-name">Veg Dum Biryani</div>
+          <p class="menu-card-desc">Fragrant basmati rice slow-cooked with vegetables and whole spices. Rich, aromatic, and deeply satisfying.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹240</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chinese -->
+    <div class="menu-panel" id="tab-chinese">
+      <div class="menu-card fade-up">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80" alt="Veg Sizzler" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">⭐ Popular</div>
+          <div class="menu-card-name">Veg Sizzler</div>
+          <p class="menu-card-desc">A sizzling platter of stir-fried vegetables, noodles or rice, served on a hot iron plate with dramatic flair.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹340</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.1s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80" alt="Hakka Noodles" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Classic</div>
+          <div class="menu-card-name">Veg Hakka Noodles</div>
+          <p class="menu-card-desc">Stir-fried noodles with fresh vegetables and a punchy Indo-Chinese sauce. Simple, satisfying comfort food.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹190</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card fade-up" style="transition-delay:0.2s">
+        <div class="menu-card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="Manchurian" class="menu-card-img">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-tag">Crowd Pleaser</div>
+          <div class="menu-card-name">Gobi Manchurian</div>
+          <p class="menu-card-desc">Crispy cauliflower florets tossed in a tangy-spicy Manchurian sauce. Best as a starter or side.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">₹200</span>
+            <span class="veg-badge"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="features-header fade-up">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">More Than Just Good Food</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">100% Pure Veg</div>
+        <p class="feature-desc">Strictly vegetarian kitchen. No eggs, no cross-contamination. Safe and trustworthy for all families.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.1s">
+        <div class="feature-icon">❄️</div>
+        <div class="feature-title">AC Family Dining</div>
+        <p class="feature-desc">Comfortable air-conditioned seating with a spacious, well-maintained dining hall for groups of all sizes.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.15s">
+        <div class="feature-icon">🏛️</div>
+        <div class="feature-title">Banquet Hall</div>
+        <p class="feature-desc">Host your family events, pujas, birthdays, and corporate gatherings in our well-equipped banquet space.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.2s">
+        <div class="feature-icon">🌊</div>
+        <div class="feature-title">Outdoor / Poolside</div>
+        <p class="feature-desc">Enjoy your meal in our unique outdoor poolside seating — a relaxed atmosphere great for evenings.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.25s">
+        <div class="feature-icon">🚗</div>
+        <div class="feature-title">Ample Parking</div>
+        <p class="feature-desc">Large dedicated parking space — no hassle of finding parking when you come with family or a group.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:0.3s">
+        <div class="feature-icon">🍽️</div>
+        <div class="feature-title">Multi-Cuisine</div>
+        <p class="feature-desc">North Indian, South Indian, and Chinese — all under one roof. Something for every palate in the family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-up">
+      <div class="section-label">What Guests Say</div>
+      <h2 class="section-title">Real Reviews, Real Experiences</h2>
+      <div class="divider"></div>
+      <p class="section-sub">We share honest feedback from our guests — the good, the constructive, and everything in between.</p>
+    </div>
+    <div class="reviews-grid">
+      <!-- Positive -->
+      <div class="review-card fade-up">
+        <span class="review-tag tag-positive">Positive</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"Visited with family for lunch and we were thoroughly impressed. The Mysore Masala Dosa was perfectly crispy and the Paneer Tikka was absolutely divine. The ambience is calm and well-maintained — feels premium without being overly formal."</p>
+        <div class="review-author">
+          <div class="review-avatar">P</div>
+          <div>
+            <div class="review-name">Priya Kulkarni</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <!-- Positive -->
+      <div class="review-card fade-up" style="transition-delay:0.1s">
+        <span class="review-tag tag-positive">Positive</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"The variety on the menu is genuinely impressive for a pure veg place. We came for a birthday dinner and they accommodated our group of 20 without any issues. The Cotton Paneer is something you won't find easily elsewhere — highly recommend it."</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rohan Desai</div>
+            <div class="review-source">Zomato</div>
+          </div>
+        </div>
+      </div>
+      <!-- Neutral -->
+      <div class="review-card fade-up" style="transition-delay:0.2s">
+        <span class="review-tag tag-neutral">Neutral</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+        </div>
+        <p class="review-text">"Food quality is genuinely good and the ambience is nice, especially the poolside area. My only concern is the pricing — it's a bit on the higher side for the Undri area. That said, the portion sizes are fair. Good for special occasions, slightly expensive for regular visits."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sneha Pawar</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <!-- Negative -->
+      <div class="review-card fade-up" style="transition-delay:0.3s">
+        <span class="review-tag tag-negative">Constructive</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+        </div>
+        <p class="review-text">"Came on a Sunday evening and the wait time was quite long — about 35 minutes for the food to arrive after ordering. The staff seemed overwhelmed during peak hours. The food, when it did arrive, was good. Would be great if they could manage the rush better."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Amit Joshi</div>
+            <div class="review-source">Zomato</div>
+          </div>
+        </div>
+      </div>
+      <!-- Positive -->
+      <div class="review-card fade-up" style="transition-delay:0.35s">
+        <span class="review-tag tag-positive">Positive</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
+        </div>
+        <p class="review-text">"We booked the banquet hall for a family puja and the team was very cooperative. The food was served on time and the catering was excellent. The Veg Biryani and Dal Makhani were the stars. Clean facilities and friendly staff made the event memorable."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Meena Sharma</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <!-- Neutral -->
+      <div class="review-card fade-up" style="transition-delay:0.4s">
+        <span class="review-tag tag-neutral">Neutral</span>
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+        </div>
+        <p class="review-text">"Decent experience overall. Food is consistent and the place is clean and well-decorated. The South Indian section is stronger than the Chinese in my opinion. Parking was easy which is always a plus in this area. Would visit again for North Indian."</p>
+        <div class="review-author">
+          <div class="review-avatar">V</div>
+          <div>
+            <div class="review-name">Vikram Nair</div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header fade-up">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">A Glimpse Inside</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Restaurant Ambience" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Dining Hall</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80" alt="Paneer Tikka" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Paneer Tikka</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=80" alt="Dosa" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Masala Dosa</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Fine Dining" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Evening Ambience</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Pav Bhaji" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Pav Bhaji</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT US -->
+<section id="visit">
+  <div class="container">
+    <div class="visit-grid">
+      <div class="fade-up">
+        <div class="section-label">Find Us</div>
+        <h2 class="section-title">Visit Krushna Restaurant</h2>
+        <div class="divider"></div>
+        <div class="visit-info-items">
+          <div class="visit-info-item">
+            <div class="visit-info-icon">📍</div>
+            <div>
+              <div class="visit-info-label">Address</div>
+              <div class="visit-info-val">Undri, Pune, Maharashtra 411060</div>
+            </div>
+          </div>
+          <div class="visit-info-item">
+            <div class="visit-info-icon">📞</div>
+            <div>
+              <div class="visit-info-label">Phone</div>
+              <div class="visit-info-val"><a href="tel:09226347536">092263 47536</a></div>
+            </div>
+          </div>
+          <div class="visit-info-item">
+            <div class="visit-info-icon">🕙</div>
+            <div>
+              <div class="visit-info-label">Hours</div>
+              <div class="visit-info-val">Open Daily &nbsp;·&nbsp; Until 11:00 PM</div>
+            </div>
+          </div>
+          <div class="visit-info-item">
+            <div class="visit-info-icon">🛵</div>
+            <div>
+              <div class="visit-info-label">Online Orders</div>
+              <div class="visit-info-val">
+                <a href="https://www.swiggy.com" target="_blank">Swiggy</a> &nbsp;·&nbsp;
+                <a href="https://www.zomato.com" target="_blank">Zomato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="visit-actions">
+          <a href="https://wa.me/919226347536" target="_blank" class="btn btn-green">💬 WhatsApp Us</a>
+          <a href="tel:09226347536" class="btn btn-outline" style="color:var(--green);border-color:var(--green);">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.757773!2d73.9127!3d18.4742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eb9825e9225b%3A0x0!2sUndri%2C+Pune%2C+Maharashtra+411060!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Krushna Restaurant Location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container cta-inner">
+    <div class="fade-up">
+      <p class="section-label" style="color:rgba(255,255,255,0.7)">Reserve Your Spot</p>
+      <h2 class="cta-title">Ready for a Pure Vegetarian Feast?</h2>
+      <p class="cta-sub">Call us to reserve a table, book the banquet hall, or simply walk in. We're open till 11 PM, every day.</p>
+      <div class="cta-btns">
+        <a href="tel:09226347536" class="btn btn-white">📞 Reserve a Table</a>
+        <a href="https://www.swiggy.com" target="_blank" class="btn btn-outline-white">🛵 Order Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon">🪷</div>
+          <div class="nav-logo-text">Krushna<span>Pure Veg Restaurant</span></div>
+        </div>
+        <p class="footer-desc">A complete vegetarian dining experience in the heart of Undri, Pune. Serving authentic North Indian, South Indian & Chinese cuisine since our founding.</p>
+        <div class="footer-veg" style="margin-top:16px">✅ Strictly Pure Vegetarian Kitchen</div>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#features">Why Choose Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:09226347536">092263 47536</a></li>
+          <li><a href="https://wa.me/919226347536">WhatsApp</a></li>
+          <li><a href="https://www.swiggy.com" target="_blank">Order on Swiggy</a></li>
+          <li><a href="https://www.zomato.com" target="_blank">Order on Zomato</a></li>
+          <li>Undri, Pune 411060</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Krushna Pure Veg Family Restaurant. Undri, Pune.</div>
+      <div class="footer-veg">🌿 100% Vegetarian</div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/919226347536" target="_blank" class="float-btn float-wa">
+    <span class="float-btn-icon">💬</span> WhatsApp
+  </a>
+  <a href="https://www.swiggy.com" target="_blank" class="float-btn float-order">
+    <span class="float-btn-icon">🛵</span> Order Now
+  </a>
+</div>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Menu tabs
+  function switchTab(tab) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+    // re-trigger animations
+    document.querySelectorAll('#tab-' + tab + ' .fade-up').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 80);
+    });
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
